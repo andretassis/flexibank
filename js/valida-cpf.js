@@ -1,3 +1,4 @@
+// exporta a função de validar o cpf para ser utilizada no main.js
 export default function ehUmCPF(campo) {
     const cpf = campo.value.replace(/\.|-/g, "");
 
@@ -6,6 +7,7 @@ export default function ehUmCPF(campo) {
     }
 }
 
+// valida se o cpf possui uma sequencia de números repetidos
 function validaNumerosRepetidos(cpf) {
     const numerosRepetidos = [
         "00000000000",
@@ -20,9 +22,10 @@ function validaNumerosRepetidos(cpf) {
         "99999999999"
     ]
 
-    return numerosRepetidos.includes(cpf)
+    return numerosRepetidos.includes(cpf);
 }
 
+// valida o primeiro dígito do cpf
 function validaPrimeiroDigito(cpf) {
     let soma = 0;
     let multiplicador = 10;
@@ -38,9 +41,10 @@ function validaPrimeiroDigito(cpf) {
         soma = 0
     }
 
-    return soma != cpf[9]
+    return soma != cpf[9];
 }
 
+// valida o segundo dígito do cpf
 function validaSegundoDigito(cpf) {
     let soma = 0;
     let multiplicador = 11;
@@ -56,5 +60,5 @@ function validaSegundoDigito(cpf) {
         soma = 0
     }
 
-    return soma != cpf[10]
+    return soma != cpf[10];
 }
